@@ -1,7 +1,7 @@
 const { promisify } = require('util');
 const jwt = require('jsonwebtoken');
 const catchAsync = require('./../utils/catchAsync');
-const AppError = require('./../utils/AppError');
+const AppError = require('./../utils/appError');
 const User = require('./../models/userModel');
 
 const signToken = (id) => {
@@ -89,9 +89,10 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
   // Check if the user changed their password and token changed
-    if (refreshUser.changedPasswordAfter(decodedToken.iat)) {
-      return next(new AppError('Your password has been changed, please login again', 401));
-  
+  if (refreshUser.changedPasswordAfter(decodedToken.iat)) {
+    return next(
+      new AppError('Your password has been changed, please login again', 401),
+    );
   }
   //
   next();

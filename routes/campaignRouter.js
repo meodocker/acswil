@@ -16,7 +16,11 @@ router.use('/:campaignId/reviews', reviewRouter);
 router
   .route('/')
   .get(campaignController.getAllCampaigns)
-  .post(authController.protect, campaignController.createCampaign);
+  .post(
+    authController.protect,
+    campaignController.setCampaignAuthorId,
+    campaignController.createCampaign,
+  );
 router
   .route('/:id')
   .get(campaignController.getCampaign)

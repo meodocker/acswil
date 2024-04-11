@@ -24,8 +24,6 @@ export const login = async (email, password) => {
   }
 };
 
-
-
 export const logout = async () => {
   try {
     const res = await axios({
@@ -42,4 +40,4 @@ export const logout = async () => {
   }
 };
 
-// a aeaeae eaea
+

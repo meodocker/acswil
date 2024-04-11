@@ -19,6 +19,11 @@ const campaignSchema = new mongoose.Schema(
       required: [true, 'Location of your business please!'],
     },
     price: { type: Number, required: [true, 'Input the minimum price please'] },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'user',
+      require: [true, 'Campaign must belong to a business!'],
+    },
     // we don't need this because we will use virtual view of 'reviews' field
     // reviews: [
     //   {
@@ -32,6 +37,14 @@ const campaignSchema = new mongoose.Schema(
     toObject: { virtuals: true },
   },
 );
+
+campaignSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: 'user',
+    select: '-__v -passwordChangedAt -email -password -role',
+  });
+  next();
+});
 
 // create a virtual view of the reviews field in selected campaign
 campaignSchema.virtual('reviewsVirtual', {

@@ -8,7 +8,11 @@ exports.getOverview = catchAsync(async (req, res) => {
   // Build template
 
   // Render the campaigns
-  res.status(200).render('overview', {
+  // res.status(200).render('overview', {
+  //   title: 'All Campaigns',
+  //   campaigns,
+  // });
+  res.status(200).render('omg', {
     title: 'All Campaigns',
     campaigns,
   });

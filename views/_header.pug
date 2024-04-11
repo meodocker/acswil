@@ -3,14 +3,15 @@ header.header
         a.nav__el(href='/') All campaigns
 
     div.header__logo
-        img(src='img/logo-white.png' alt='Our logo')
+        //- img(src='img/logo-white.png' alt='Our logo')
 
     nav.nav.nav--user 
         if user
-            a.nav__el.nav__el--logout Log Out
+            img.nav__user-img(src='https://image.similarpng.com/very-thumbnail/2020/04/cute-star-PNG-SimilarPNG.png' alt='User photo')
+            a.nav__el.span= user.name
+            a.nav__el(href='#')
             a.nav__el(href='#') My campaigns
-                img.nav__user-img(src='img/user.jpg' alt='User photo')
-                span= user.name
+            a.nav__el.nav__el--logout Log Out
         else
             a.nav__el(href='/login') Login
             a.nav__el.nav__el-cta(href='/signup') Sign Up

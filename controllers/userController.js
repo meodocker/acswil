@@ -1,41 +1,19 @@
-const User = require('./../models/userModel');
-const catchAsync = require('./../utils/catchAsync');
-
-exports.getAllUsers = catchAsync(async (req, res, next) => {
-  const users = await User.find();
-
-  res.status(200).json({
-    status: 'success',
-    data: {
-      users,
-    },
-  });
-});
-
-exports.getUser = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'Not Implemented',
-  });
-};
+const User = require('../models/userModel');
+const handler = require('./../controllers/handlerController');
 
 exports.createUser = (req, res) => {
   res.status(500).json({
     status: 'error',
-    message: 'Not Implemented',
+    message: 'Not Implemented, PLEASE USE SIGNUP!',
   });
 };
 
-exports.updateUser = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'Not Implemented',
-  });
+exports.getMe = (req, res, next) => {
+  req.params.id = req.user._id;
+  next();
 };
 
-exports.deleteUser = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'Not Implemented',
-  });
-};
+exports.getAllUsers = handler.getAll(User);
+exports.getUser = handler.getOne(User);
+exports.updateUser = handler.updateOne(User);
+exports.deleteUser = handler.deleteOne(User);

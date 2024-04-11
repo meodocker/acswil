@@ -14,20 +14,25 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     validate: [validator.isEmail, 'Please enter a valid email!'],
   },
-  username: {
-    type: String,
-    required: [true, 'Username is required!'],
-    unique: true,
-  },
+  // username: {
+  //   type: String,
+  //   required: [true, 'Username is required!'],
+  //   unique: true,
+  // },
   photo: String,
   password: { type: String, required: [true, 'Password is required!'] },
-  passwordConfirm: {
+  // passwordConfirm: {
+  //   type: String,
+  //   // required: [true, 'Please confirm your password!'],
+  //   validator: function (value) {
+  //     return value === this.password;
+  //   },
+  //   message: 'Passwords do not match!',
+  // },
+  role: {
     type: String,
-    required: [true, 'Please confirm your password!'],
-    validator: function (value) {
-      return value === this.password;
-    },
-    message: 'Passwords do not match!',
+    enum: ['user', 'mod', 'admin'],
+    default: 'user',
   },
   passwordChangedAt: Date,
 });

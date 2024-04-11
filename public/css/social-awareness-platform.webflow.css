@@ -1,0 +1,402 @@
+:root {
+  --memberstack-library--ms-main-cta-color: #2962ff;
+  --memberstack-library--ms-main-cta-hover: #1051b9;
+  --memberstack-library--ms-main-text-color: #121331;
+  --memberstack-library--ms-border-color: rgba(18, 19, 49, .25);
+  --memberstack-library--ms-shadow-color: rgba(0, 0, 0, .1);
+  --memberstack-library--ms-input-placeholder: rgba(18, 19, 49, .6);
+}
+
+.w-checkbox {
+  margin-bottom: 5px;
+  padding-left: 20px;
+  display: block;
+}
+
+.w-checkbox:before {
+  content: " ";
+  grid-area: 1 / 1 / 2 / 2;
+  display: table;
+}
+
+.w-checkbox:after {
+  content: " ";
+  clear: both;
+  grid-area: 1 / 1 / 2 / 2;
+  display: table;
+}
+
+.w-checkbox-input {
+  float: left;
+  margin: 4px 0 0 -20px;
+  line-height: normal;
+}
+
+.w-checkbox-input--inputType-custom {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  width: 12px;
+  height: 12px;
+}
+
+.w-checkbox-input--inputType-custom.w--redirected-checked {
+  background-color: #3898ec;
+  background-image: url('https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-color: #3898ec;
+}
+
+.w-checkbox-input--inputType-custom.w--redirected-focus {
+  box-shadow: 0 0 3px 1px #3898ec;
+}
+
+.ms-button-svg {
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+}
+
+.ms-button-flex {
+  grid-column-gap: 8px;
+  align-items: center;
+  display: flex;
+}
+
+.ms-button {
+  border: 1px solid var(--memberstack-library--ms-main-cta-color);
+  background-color: var(--memberstack-library--ms-main-cta-color);
+  color: #fff;
+  text-align: center;
+  letter-spacing: .03em;
+  border-radius: 8px;
+  flex: none;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 13px 16px 11.5px;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: transform .2s cubic-bezier(.645, .045, .355, 1), border-color .2s cubic-bezier(.645, .045, .355, 1), border-radius .2s cubic-bezier(.645, .045, .355, 1), box-shadow .2s cubic-bezier(.645, .045, .355, 1), background-color .2s cubic-bezier(.645, .045, .355, 1);
+  display: inline-block;
+  position: relative;
+  top: 0;
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, .25), 0 10px 20px -5px rgba(45, 62, 80, .3);
+}
+
+.ms-button:hover {
+  background-color: var(--memberstack-library--ms-main-cta-hover);
+  box-shadow: none;
+  color: #fff;
+  transform: translate(0, 2px);
+}
+
+.ms-button:active {
+  background-color: #0a3092;
+}
+
+.ms-button.ms-is-light {
+  color: #070e27;
+  background-color: #fff;
+  background-image: none;
+  background-size: auto;
+  border: 1px solid #dbe2eb;
+  box-shadow: 0 1px 3px rgba(255, 255, 255, .25), 0 10px 20px -5px rgba(45, 62, 80, .1);
+}
+
+.ms-button.ms-is-light:hover {
+  box-shadow: none;
+  color: #1051b9;
+  background-color: #fff;
+  border-color: #1051b9;
+}
+
+.ms-button.ms-is-light:active {
+  color: #fff;
+  background-color: #356af0;
+}
+
+.ms-button.ms-is-light.ms-is-small {
+  margin-bottom: 0;
+}
+
+.ms-button.ms-is-light.ms-is-small.ms-is-documentation {
+  width: 100%;
+  margin-top: 3em;
+  display: flex;
+}
+
+.ms-button.ms-is-small {
+  border-radius: 6px;
+  height: auto;
+  padding: 7px 16px;
+  font-size: .85em;
+  font-weight: 500;
+  transform: perspective(1000px);
+}
+
+.ms-button.ms-is-form {
+  width: 100%;
+}
+
+.ms-link {
+  color: var(--memberstack-library--ms-main-cta-color);
+  border-bottom: 1px solid rgba(41, 98, 255, .01);
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color .2s;
+}
+
+.ms-link:hover {
+  border-bottom-color: var(--memberstack-library--ms-main-cta-color);
+  color: var(--memberstack-library--ms-main-cta-hover);
+}
+
+.ms-space {
+  width: 10px;
+  height: 10px;
+}
+
+.ms-space.ms-is-20 {
+  width: 20px;
+  height: 20px;
+}
+
+.ms-social-image {
+  width: 24px;
+}
+
+.ms-social-inner {
+  grid-column-gap: 20px;
+  align-items: center;
+  display: flex;
+}
+
+.ms-social-inner.ms-is-center {
+  justify-content: center;
+}
+
+.ms-social-button {
+  color: var(--memberstack-library--ms-main-text-color);
+  background-color: #fff;
+  border: 1px solid #dcdce5;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 12px 40px 12px 15px;
+  font-size: 15px;
+  font-weight: 300;
+  text-decoration: none;
+  transition: background-color .2s, border-color .2s, box-shadow .2s;
+  position: relative;
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, .1);
+}
+
+.ms-social-button:hover {
+  border-color: var(--memberstack-library--ms-main-text-color);
+  box-shadow: none;
+}
+
+.ms-social-button:focus {
+  border: 1px solid #000;
+}
+
+.ms-social-button::placeholder {
+  color: #6e6e6e;
+}
+
+.ms-social-button.ms-is-facebook:hover {
+  border-color: #1777f2;
+}
+
+.ms-form-divider-line {
+  background-color: #e4e4e4;
+  width: 40%;
+  height: .8px;
+}
+
+.ms-form-divider-text {
+  text-align: center;
+  flex: none;
+  min-width: 33%;
+}
+
+.ms-form-divider {
+  color: rgba(0, 0, 0, .8);
+  letter-spacing: 2px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 12px;
+  display: flex;
+}
+
+.ms-checkbox-label {
+  font-weight: 300;
+}
+
+.ms-checkbox {
+  border-width: 1.5px;
+  border-color: var(--memberstack-library--ms-border-color);
+  background-color: #fff;
+  border-radius: 33%;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  margin-right: 10px;
+  transition: background-color .2s, border-color .2s;
+}
+
+.ms-checkbox:hover {
+  border-color: var(--memberstack-library--ms-main-cta-color);
+  background-color: var(--memberstack-library--ms-main-cta-color);
+  background-image: linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .9));
+}
+
+.ms-checkbox.w--redirected-checked {
+  background-color: #2962ff;
+  background-image: url('../images/smallcheck.svg');
+  background-size: 70%;
+  border-color: rgba(18, 19, 49, .25);
+  border-radius: 33%;
+}
+
+.ms-checkbox-wrap {
+  align-items: flex-start;
+  margin-bottom: 0;
+  padding-top: .3333em;
+  line-height: 22px;
+  display: flex;
+}
+
+.ms-checkbox-wrap.ms-is-smaller {
+  font-size: 90%;
+}
+
+.ms-list-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.ms-input {
+  border: 1px solid var(--memberstack-library--ms-border-color);
+  box-shadow: 0 5px 10px -5px var(--memberstack-library--ms-shadow-color);
+  color: var(--memberstack-library--ms-main-text-color);
+  background-color: #fff;
+  border-radius: 5px;
+  min-height: 40px;
+  margin-bottom: 1.333em;
+  padding: 8px 12px;
+  transition: box-shadow .2s, color .2s, box-shadow .2s, border-color .2s;
+  position: relative;
+}
+
+.ms-input:hover {
+  z-index: 2;
+  border-color: var(--memberstack-library--ms-main-cta-color);
+  box-shadow: none;
+}
+
+.ms-input::placeholder {
+  color: var(--memberstack-library--ms-input-placeholder);
+}
+
+.ms-input-label {
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: .9em;
+  font-weight: 600;
+}
+
+.ms-form-heading {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1.4em;
+}
+
+.ms-form {
+  float: none;
+  clear: none;
+  width: 400px;
+  min-width: 400px;
+  padding: 0%;
+  position: static;
+}
+
+.ms-form-block {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  flex-flow: row;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: 10%;
+  bottom: 10%;
+  left: 25%;
+  right: 25%;
+}
+
+@media screen and (max-width: 991px) {
+  .ms-button {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .ms-form-heading {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .ms-button {
+    width: 100%;
+    min-height: auto;
+    padding: .6em 1.3em;
+    font-size: 14px;
+    font-style: normal;
+  }
+
+  .ms-button.ms-is-light {
+    max-width: 100vw;
+  }
+
+  .ms-form-divider {
+    width: 100%;
+  }
+
+  .ms-checkbox-wrap {
+    display: flex;
+  }
+
+  .ms-input {
+    font-size: 12px;
+  }
+
+  .ms-form {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .ms-form-block {
+    width: 100%;
+  }
+}

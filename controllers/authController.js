@@ -44,7 +44,12 @@ exports.signup = async (req, res, next) => {
     const newUser = await User.create({
       name: req.body.name,
       email: req.body.email,
+      photo: req.body.photo,
+      role: req.body.role,
       password: req.body.password,
+      bio: req.body.bio,
+      website: req.body.website,
+      address: req.body.address,
     });
 
     const token = signToken(newUser._id);

@@ -31,9 +31,13 @@ const userSchema = new mongoose.Schema({
   // },
   role: {
     type: String,
-    enum: ['user', 'mod', 'admin'],
+    required: true,
+    enum: ['user', 'business', 'admin'],
     default: 'user',
   },
+  bio: { type: String }, // User bio or description
+  website: { type: String }, // Business website URL
+  address: { type: String }, // Business address
   passwordChangedAt: Date,
 });
 

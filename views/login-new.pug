@@ -1,0 +1,56 @@
+extends base
+
+block content
+    main.main
+        meta(charset='utf-8')
+        title Login
+        meta(content='Login' property='og:title')
+        meta(content='Login' property='twitter:title')
+        meta(content='width=device-width, initial-scale=1' name='viewport')
+        meta(content='Webflow' name='generator')
+        
+        //- link(href='images/favicon.ico' rel='shortcut icon' type='image/x-icon')
+        //- link(href='images/webclip.png' rel='apple-touch-icon')
+        .ms-form-block
+            .w-form
+                form#wf-form-Signup-Form-Two.ms-form(name='wf-form-Signup-Form-Two' data-name='Signup Form Two' method='get' data-ms-form='signup' data-wf-page-id='66177368e66371d41a890e5e' data-wf-element-id='54639c91-9a1e-d4c4-8cf8-2f381eae2d11')
+                    h2.ms-form-heading Signup w/ Password, Name, Social Auth, etc. 
+                    div
+                        label.ms-input-label(for='Name-Two-2') Name
+                        input#Name-Two-2.ms-input.w-input(maxlength='256' name='Name-Two-2' data-name='Name Two 2' placeholder='e.g. Howard Thurman' type='text' data-ms-member='name' required='')
+                    div
+                        label.ms-input-label(for='Email-Two-2') Email Address
+                        input#Email-Two-2.ms-input.w-input(maxlength='256' name='Email-Two-2' data-name='Email Two 2' placeholder='e.g. howard@gmail.com' type='email' data-ms-member='email' required='')
+                    div
+                        label.ms-input-label(for='Password-Two-2') Password Input
+                        input#Password-Two-2.ms-input.w-input(maxlength='256' name='Password-Two-2' data-name='Password Two 2' placeholder='⁕ ⁕ ⁕ ⁕ ⁕ ⁕ ⁕ ⁕' type='password' data-ms-member='password' required='')
+                    .ms-list-container
+                        label.w-checkbox.ms-checkbox-wrap.ms-is-smaller(data-ms-member='consent')
+                            .w-checkbox-input.w-checkbox-input--inputType-custom.ms-checkbox
+                            input#Terms-Two-2(type='checkbox' name='Terms-Two-2' data-name='Terms Two 2' required='' style='opacity:0;position:absolute;z-index:-1')
+                            span.ms-checkbox-label.w-form-label(for='Terms-Two-2')
+                            | I agree to the 
+                            a.ms-link(href='#') Terms of Use
+                            |  &amp;&nbsp;
+                            a.ms-link(href='#') Privacy policy
+                            | .
+                        label.w-checkbox.ms-checkbox-wrap.ms-is-smaller
+                            .w-checkbox-input.w-checkbox-input--inputType-custom.ms-checkbox
+                            input#Subscribe-Two-2(type='checkbox' name='Subscribe-Two-2' data-name='Subscribe Two 2' data-ms-member='subscribe' style='opacity:0;position:absolute;z-index:-1')
+                            span.ms-checkbox-label.w-form-label(for='Subscribe-Two-2') Send me product updates
+                    input.ms-button.ms-is-form.w-button(type='submit' data-wait='Please wait...' value='Submit')
+                    .ms-space.ms-is-20
+                    div Already have an account? 
+                        a.ms-link.w--current(href='login.html' aria-current='page') Login here
+                        a(href='/signup')
+                    a.ms-button.ms-is-light.ms-is-small.ms-is-documentation.w-inline-block(href='https://docs.memberstack.com/hc/en-us/articles/7424129003547-Create-a-Signup-Form-in-Webflow' target='_blank')
+                        .ms-button-flex
+                            div How This Works
+                            .ms-button-svg.w-embed
+                                svg(xmlns='http://www.w3.org/2000/svg' height='24' viewbox='0 -960 960 960' width='24')
+                                    path(d='M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h240q17 0 28.5 11.5T480-800q0 17-11.5 28.5T440-760H200v560h560v-240q0-17 11.5-28.5T800-480q17 0 28.5 11.5T840-440v240q0 33-23.5 56.5T760-120H200Zm560-584L416-360q-11 11-28 11t-28-11q-11-11-11-28t11-28l344-344H600q-17 0-28.5-11.5T560-800q0-17 11.5-28.5T600-840h240v240q0 17-11.5 28.5T800-560q-17 0-28.5-11.5T760-600v-104Z')
+            .w-form-done
+                div Thank you! Your submission has been received!
+            .w-form-fail
+                div Oops! Something went wrong while submitting the form.
+    

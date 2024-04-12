@@ -26,6 +26,7 @@ html(data-wf-page='661772c1d9e1eb8a1bac9856' data-wf-site='661772c1d9e1eb8a1bac9
 						a.uui-navbar07_link.w-nav-link(href='/donate') Donate To Clauses
 					if user
 						.uui-navbar07_menu-right
+							
 							.uui-navbar07_button-wrapper
 								a.uui-button.w-inline-block(href='/mycampaigns')
 									div My Campaigns
@@ -35,6 +36,9 @@ html(data-wf-page='661772c1d9e1eb8a1bac9856' data-wf-site='661772c1d9e1eb8a1bac9
 								//- 	div Log Out
 								a.uui-button-secondary-gray.w-inline-block(href='/logout')
 									div Log Out
+								a.uui-navbar07_link.w-nav-link
+									div= `Welcome back, ${user.name}!`
+								
 					else
 						.uui-navbar07_menu-right
 							.uui-navbar07_button-wrapper
@@ -55,6 +59,9 @@ html(data-wf-page='661772c1d9e1eb8a1bac9856' data-wf-site='661772c1d9e1eb8a1bac9
 				.uui-container-large
 					.uui-padding-vertical-xhuge
 						.uui-max-width-large
+							if user
+								h2.uui-heading-large= `G'day, ${user.name}!`
+							
 							h2.uui-heading-large Explore your latest local businesses!
 							br
 							br

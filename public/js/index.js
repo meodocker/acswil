@@ -33,7 +33,10 @@ if (signUpForm)
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    signup(name, email, password);
+    const role = document.querySelector('input[name="usertype"]:checked').value;
+    console.log(role);
+
+    signup(name, email, password, role);
   });
 
 if (logOutBtn) logOutBtn.addEventListener('click', logout);

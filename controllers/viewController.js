@@ -7,7 +7,7 @@ exports.getOverview = catchAsync(async (req, res) => {
 
   // Build template
 
-  // Render the campaigns
+  // Render the campaigns - old UI
   // res.status(200).render('overview', {
   //   title: 'All Campaigns',
   //   campaigns,
@@ -34,4 +34,23 @@ exports.getSignUp = catchAsync(async (req, res) => {
   res.status(200).render('signup', {
     title: 'Register',
   });
+});
+
+// exports.getLogOut = catchAsync(async (req, res) => {
+//   res.status(200).render('logout', {
+//     title: 'Log Out',
+//   });
+// });
+
+exports.getLogOut = catchAsync(async (req, res, next) => {
+  try {
+    res.cookie('jwt', 'loggedout', {
+      expires: parseInt(new Date(Date.now() + 10 * 1000), 10),
+      httpOnly: true,
+    });
+  } catch (err) {
+    console.log(err);
+    return res.end('err');
+  }
+  res.status(200).redirect('/');
 });

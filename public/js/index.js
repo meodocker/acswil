@@ -9,7 +9,7 @@ import { signup } from './signup';
 // const mapBox = document.getElementById('map');
 const loginForm = document.querySelector('.form--login');
 const signUpForm = document.querySelector('.form--signup');
-const logOutBtn = document.querySelector('.nav__el--logout');
+const logOutBtn = document.querySelector('.logoutnow');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 

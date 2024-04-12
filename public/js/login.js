@@ -31,13 +31,12 @@ export const logout = async () => {
       url: '/api/v1/users/logout',
     });
     console.log(res.data.status);
-    showAlert('success', 'Logged out successfully!');
+    // showAlert('success', 'Logged out successfully!');
     if ((res.data.status = 'success')) {
       location.reload(true);
     }
   } catch (error) {
-    showAlert('error', 'Something went wrong');
+    // showAlert('error', 'Something went wrong');
+    console.log('error');
   }
 };
-
-

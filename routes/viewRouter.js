@@ -10,5 +10,6 @@ router.get('/', viewController.getOverview);
 router.get('/campaign', viewController.getCampaign);
 router.get('/login', viewController.getLogin);
 router.get('/signup', viewController.getSignUp);
+router.get('/logout', viewController.getLogOut);
 
 module.exports = router;

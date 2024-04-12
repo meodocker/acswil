@@ -1,0 +1,10 @@
+logout = (req, res) => {
+    res.cookie('jwt', 'loggedout', {
+        expires: parseInt(new Date(Date.now() + 10 * 1000), 10),
+        httpOnly: true,
+    });
+    res.status(200).json({
+        status: 'success',
+        message: 'Logged out',
+    });
+};

@@ -1308,7 +1308,7 @@ body {
 }
 
 .form__input {
-    display: block;
+    display: flex;
     font-family: inherit;
     font-size: 1.5rem;
     color: inherit;

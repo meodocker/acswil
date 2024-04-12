@@ -21,9 +21,9 @@ html(data-wf-page='661772c1d9e1eb8a1bac9856' data-wf-site='661772c1d9e1eb8a1bac9
 						img.uui-logo_image(src='images/sapsap.png' loading='lazy' alt='Logo')
 				nav.uui-navbar07_menu.w-nav-menu(role='navigation')
 					.uui-navbar07_menu-left
-						a.uui-navbar07_link.w-nav-link(href='#') Home
-						a.uui-navbar07_link.w-nav-link(href='#') All Businesses
-						a.uui-navbar07_link.w-nav-link(href='#') Donate To Clauses
+						a.uui-navbar07_link.w-nav-link(href='/') Home
+						a.uui-navbar07_link.w-nav-link(href='/') All Businesses
+						a.uui-navbar07_link.w-nav-link(href='/donate') Donate To Clauses
 					if user
 						.uui-navbar07_menu-right
 							.uui-navbar07_button-wrapper
@@ -31,8 +31,8 @@ html(data-wf-page='661772c1d9e1eb8a1bac9856' data-wf-site='661772c1d9e1eb8a1bac9
 									div My Campaigns
 								a.uui-button.w-inline-block(href='/myprofile')
 									div My Profile
-								a.uui-button-secondary-gray.show-tablet.w-inline-block(href='/logout')
-									div Log Out
+								//- a.uui-button-secondary-gray.show-tablet.w-inline-block(href='/logout')
+								//- 	div Log Out
 								a.uui-button-secondary-gray.w-inline-block(href='/logout')
 									div Log Out
 					else
@@ -50,14 +50,66 @@ html(data-wf-page='661772c1d9e1eb8a1bac9856' data-wf-site='661772c1d9e1eb8a1bac9
 						.menu-icon_line-middle
 							.menu-icon_line-middle-inner
 						.menu-icon_line-bottom
-		block header#blog-header-5.uui-section_blog03
+		header#blog-header-5.uui-section_blog03
 			#card-container.uui-page-padding
 				.uui-container-large
 					.uui-padding-vertical-xhuge
 						.uui-max-width-large
-							h2.uui-heading-large Welcome to SapSap (Social Awareness Platform)
-							.uui-space-small
-							.uui-text-size-large Interestingly, "sạp" in Vietnamese also refers to a stall in local traditional markets where products are sold. To adapt with the new era, at SapSap by ACS, we elevate brand awareness for local businesses through strategic advertising. Our approach highlights your offerings and charity commitments, enhancing your market presence and community contribution. Join SapSap today to grow your brand and make a meaningful impact.
+							h2.uui-heading-large Explore your latest local businesses!
+							br
+							br
+							br
+						.uui-blog03_category-menu.no-scrollbar
+							a.uui-blog03_menu-link.w-inline-block(href='#')
+								div View all
+							a.uui-blog03_menu-link.w-inline-block(href='#')
+								div Most Reviewed
+							a.uui-blog03_menu-link.w-inline-block(href='#')
+								div Latest
+							a.uui-blog03_menu-link.w-inline-block(href='#')
+								div ...
+							a.uui-blog03_menu-link.last-link.w-inline-block(href='#')
+								div ...
+							.uui-scrollbar-css.w-embed
+								style.
+									.no-scrollbar {
+									-ms-overflow-style: none;  // IE 10+
+									overflow: -moz-scrollbars-none;  // Firefox
+									}
+									.no-scrollbar::-webkit-scrollbar {
+									display: none; // Safari and Chrome
+									}
+						.uui-blog03_list-wrapper
+							#card-container.w-layout-grid.card-container
+
+								each campaign in campaigns
+									.card
+										a.uui-blog03_image-link.w-inline-block(data-w-id='0a5ae499-0ee2-729d-889d-e3f2f130646b' href='#change-url-later')
+											.uui-blog03_image-wrapper
+												img.card__picture(srcset=`${campaign.photoUrl}` loading='lazy' sizes='(max-width: 479px) 93vw, (max-width: 767px) 96vw, 94vw' src='images/Blog-Image-2.jpg' alt='Man working at desk')
+										a.uui-blog03_category-link.w-inline-block(href='#')
+											div= campaign.location
+										a.uui-blog03_title-link.w-inline-block(data-w-id='0a5ae499-0ee2-729d-889d-e3f2f1306471' href='#change-url-later')
+											h3.heading-tertirary= campaign.name
+											.uui-blog03_icon.w-embed
+												svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+													path(d='M7 17L17 7M17 7H7M17 7V17' stroke='CurrentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+										.card__text= campaign.description
+										.uui-blog03_author-wrapper
+											.uui-blog03_author-image-wrapper
+												img.uui-blog03_author-image(src=`${campaign.user.photo}` loading='lazy' alt='')
+											.uui-blog03_author-text
+												.uui-blog03_author-heading= campaign.user.name
+												.uui-blog03_date-wrapper
+													.uui-text-size-small 11 Jan 2022
+						br
+						br
+						br
+						br
+						.uui-max-width-large
+						h2.uui-heading-large About us (SapSap)
+						.uui-space-small
+						.uui-text-size-large Interestingly, SAP (is short for Social Awareness Platform) is pronounced as "sạp" in Vietnamese, which refers to a stall in local traditional markets where products are sold. To adapt with the new era, at SapSap by ACS, we elevate brand awareness for local businesses through strategic advertising. Our approach highlights your offerings and charity commitments, enhancing your market presence and community contribution. Join SapSap today to grow your brand and make a meaningful impact.
 						.uui-blog03_component
 							.uui-blog03_featured-list-wrapper
 								.uui-blog03_featured-list
@@ -74,50 +126,6 @@ html(data-wf-page='661772c1d9e1eb8a1bac9856' data-wf-site='661772c1d9e1eb8a1bac9
 													img.uui-blog03_author-image(src='images/logo.png' loading='lazy' alt='')
 												.uui-blog03_author-text
 													.uui-blog03_author-heading SapSap Team
-							.uui-blog03_category-menu.no-scrollbar
-								a.uui-blog03_menu-link.w-inline-block(href='#')
-									div View all
-								a.uui-blog03_menu-link.w-inline-block(href='#')
-									div Most Reviewed
-								a.uui-blog03_menu-link.w-inline-block(href='#')
-									div Latest
-								a.uui-blog03_menu-link.w-inline-block(href='#')
-									div ...
-								a.uui-blog03_menu-link.last-link.w-inline-block(href='#')
-									div ...
-								.uui-scrollbar-css.w-embed
-									style.
-										.no-scrollbar {
-										-ms-overflow-style: none;  // IE 10+
-										overflow: -moz-scrollbars-none;  // Firefox
-										}
-										.no-scrollbar::-webkit-scrollbar {
-										display: none; // Safari and Chrome
-										}
-							.uui-blog03_list-wrapper
-								#card-container.w-layout-grid.card-container
-
-									each campaign in campaigns
-										.card
-											a.uui-blog03_image-link.w-inline-block(data-w-id='0a5ae499-0ee2-729d-889d-e3f2f130646b' href='#change-url-later')
-												.uui-blog03_image-wrapper
-													img.card__picture(srcset=`${campaign.photoUrl}` loading='lazy' sizes='(max-width: 479px) 93vw, (max-width: 767px) 96vw, 94vw' src='images/Blog-Image-2.jpg' alt='Man working at desk')
-											a.uui-blog03_category-link.w-inline-block(href='#')
-												div= campaign.location
-											a.uui-blog03_title-link.w-inline-block(data-w-id='0a5ae499-0ee2-729d-889d-e3f2f1306471' href='#change-url-later')
-												h3.heading-tertirary= campaign.name
-												.uui-blog03_icon.w-embed
-													svg(width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
-														path(d='M7 17L17 7M17 7H7M17 7V17' stroke='CurrentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
-											.card__text= campaign.description
-											.uui-blog03_author-wrapper
-												.uui-blog03_author-image-wrapper
-													img.uui-blog03_author-image(src=`${campaign.user.photo}` loading='lazy' alt='')
-												.uui-blog03_author-text
-													.uui-blog03_author-heading= campaign.user.name
-													.uui-blog03_date-wrapper
-														.uui-text-size-small 11 Jan 2022
-
 		footer.uui-footer07_component
 			.uui-page-padding
 				.uui-container-large

@@ -8,7 +8,7 @@ Database system: Mongoose on MongoDB Atlas
 
 ## Demo
 
-We deployed on render.com (a free cloud hosting service that support NodeJS). Due to the limitation of render.com, after a period of time without any activity, the website would need a first request to it and it would take around 1 minute in order to wake up the service. After that, the website will work smoothly as expected:
+We deployed on render.com (a free cloud hosting service that support NodeJS). Due to the limitation of render.com, if there is no activity on the webapp for a period of time, the website would need a first request to it as a service activation, and the request might take around 1 minute in order to wake up the service, that is the reason why you are experiencing delay when you first visit the website. After the re-activation, the website will work smoothly as expected:
 
 ```bash
 https://acswil.onrender.com/

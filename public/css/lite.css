@@ -40,3 +40,21 @@
     line-height: 1.3;
     display: inline-block;
 }
+
+.btn--purple {
+    background-color: #7f56d9;
+    color: #fff;
+}
+
+.btn--purple::after {
+    background-color: #584189;
+}
+
+.btn--purple:hover {
+    background-color: #956bf1;
+}
+
+.text-purple {
+    color: #6f42c1;
+    /* Bootstrap 5's purple used for `.bg-purple` */
+}
